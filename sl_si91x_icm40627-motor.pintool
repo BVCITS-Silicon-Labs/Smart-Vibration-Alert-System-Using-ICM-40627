@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.siwg917m111mgtba" partId="mcu.arm.wfm.siwg917m111mgtba" contextId="com.silabs.sdk.stack.sisdk:2025.12.2._1619221894563987570">
+  <mode name="DefaultMode">
+    <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="PORTIO" propertyId="portio.ulp_spi.enable.cs0_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.ulp_spi.enable.miso_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.ulp_spi.enable.mosi_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.ulp_spi.enable.sck_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.ulp_spi.location.cs0_" value="9"/>
+    <property object="PORTIO" propertyId="portio.ulp_spi.location.miso_" value="12"/>
+    <property object="PORTIO" propertyId="portio.ulp_spi.location.sck_" value="7"/>
+    <property object="ULP_SSI" propertyId="ABModule.selectedRequirement" value="ulp_ssi%T%SL_SI91X_ICM40627%T%sl_si91x_icm40627_config.h"/>
+    <property object="ULP_SSI" propertyId="ABPeripheral.included" value="true"/>
+  </mode>
+  <modeTransition>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.target" value="DefaultMode"/>
+  </modeTransition>
+</device:XMLDevice>

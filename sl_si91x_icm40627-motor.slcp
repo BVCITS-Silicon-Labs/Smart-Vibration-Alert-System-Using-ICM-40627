@@ -1,0 +1,83 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: sl_si91x_icm40627-motor
+label: sl_si91x_icm40627-motor
+description: "This application demonstrates how to configure and use the ICM40627\
+  \ motion sensor, a 6-axis sensor that combines a 3-axis accelerometer and a 3-axis\
+  \ gyroscope. \nThe example covers how to initialize the sensor, configure its settings\
+  \ for various motion detection tasks, and retrieve sensor data for further processing,\
+  \ enabling motion-based applications.\n"
+category: example|peripheral
+package: platform_siwx91x_app
+quality: production
+readme:
+- path: readme.md
+source:
+- path: app.c
+- path: icm40627_example.c
+include:
+- path: .
+  file_list:
+  - path: app.h
+  - path: icm40627_example.h
+sdk:
+  vendor: silabs
+  id: simplicity_sdk
+  version: 2025.12.2
+toolchain_settings:
+- value: -Wall -Werror
+  option: gcc_compiler_option
+component:
+- package: simplicity_sdk
+  vendor: silabs
+  id: sl_main
+- package: simplicity_sdk
+  vendor: silabs
+  id: sleeptimer
+- package: wiseconnect3_sdk
+  vendor: silabs
+  id: SIWG917M111MGTBA
+- package: wiseconnect3_sdk
+  vendor: silabs
+  id: brd2605a
+- package: wiseconnect3_sdk
+  vendor: silabs
+  id: si91x_memory_default_config
+- package: wiseconnect3_sdk
+  vendor: silabs
+  id: sl_icm40627
+- package: wiseconnect3_sdk
+  vendor: silabs
+  id: sl_ssi
+- package: wiseconnect3_sdk
+  instance:
+  - ulp_primary
+  vendor: silabs
+  id: sl_ssi_instance
+- package: wiseconnect3_sdk
+  vendor: silabs
+  id: ssi_ulp_component
+- package: wiseconnect3_sdk
+  vendor: silabs
+  id: syscalls
+other_file:
+- path: resources/readme/setupdiagram.png
+- path: resources/readme/output1.png
+configuration:
+- name: SL_SSI_DEVICE_MODE
+  value: SL_SSI_ULP_MASTER_ACTIVE
+- name: SL_SPI_BAUD
+  value: '5000000'
+- name: SL_ULP_TIMER_DIRECTION
+  value: '1'
+ui_hints:
+  highlight:
+  - path: readme.md
+    focus: true
+sdk_extension:
+- vendor: silabs
+  id: wiseconnect3_sdk
+  version: 4.0.1
+post_build:
+- path: sl_si91x_icm40627-motor.slpb
+  profile: wiseconnect_soc
+
